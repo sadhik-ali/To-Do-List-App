@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h2 class="card-title mb-4">Delete Task</h2>
+                <p>Are you sure you want to delete <strong>"{{ object }}"</strong>?</p>
+                <form method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Yes, delete</button>
+                </form>
+                <a href="{% url 'todo:task-list' %}" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
